@@ -1,4 +1,4 @@
-import { createPythonList, createJSList, createHTMLList, createJavaList, createCList,createRustList, createRubyList} from './util.js';
+import { createPythonList, createJSList, createHTMLList, createJavaList, createCList,createRustList, createRubyList, createKotlinList } from './util.js';
 
 const convertButton = document.getElementById('convert-button');
 let languageSelector = document.querySelector(".choose-language"); 
@@ -100,8 +100,11 @@ convertButton.addEventListener('click', function() {
         output = createRustList(normalizedInput);
     } else if (language === 'c') {
         output = createCList(normalizedInput);
-    }
-    else {
+    } else if (language === 'ruby') {
+        output = createRubyList(normalizedInput);
+    } else if (language === 'kotlin') {
+        output = createKotlinList(normalizedInput);
+    } else {
         output = normalizedInput;
     }
 

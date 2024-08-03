@@ -38,11 +38,11 @@ export function createRustList(input) {
 export function createRubyList(input) {
     const items = input.split('/\*&').map(item => item.trim()).filter(item => item !== '');
     const rubyList = '[' + items.map(item => `"${item}"`).join(', ') + ']';
-    return rubyList
+    return rubyList;
 }
 
 export function createKotlinList(input) {
     const items = input.split('/\*&').map(item => item.trim()).filter(item => item !== '');
-    const kotlinList = '(' + items.map(item => `"${item}"`).join(', ') + ')';
-    return kotlinList
+    const kotlinList = '(' + items.map(item => `"${item}"`).join(', ') + ');';
+    return kotlinList;
 }
