@@ -1,7 +1,10 @@
+import { createPythonList, createJSList, createHTMLList, createJavaList, createCList,createRustList, createRubyList} from './util.js';
+
 const convertButton = document.getElementById('convert-button');
 let languageSelector = document.querySelector(".choose-language"); 
 let delimiterSelector = document.querySelector(".choose-delimiter");
 let customDelimiterButton = document.querySelector(".custom-delimiter-button");
+let copyButton = document.querySelector(".copy-button");
 
 let input = "";
 
@@ -93,7 +96,11 @@ convertButton.addEventListener('click', function() {
         output = createHTMLList(normalizedInput);
     } else if (language === 'java') {
         output = createJavaList(normalizedInput);
-    } 
+    } else if (language === 'rust') {
+        output = createRustList(normalizedInput);
+    } else if (language === 'c') {
+        output = createCList(normalizedInput);
+    }
     else {
         output = normalizedInput;
     }
@@ -104,45 +111,7 @@ convertButton.addEventListener('click', function() {
     outputContainer.style.display = "inline";
 });
 
-function createPythonList(input) {
-    // Split the input into an array
-    const items = input.split('/\*&').map(item => item.trim()).filter(item => item !== '');
+copyButton.addEventListener("click", () => {
+    navigator.clipboard.writeText(output);
+});
 
-    // Create the Python list string with quotes around each item
-    const pythonList = '[' + items.map(item => `"${item}"`).join(', ') + ']';
-    output = pythonList;
-    return output;
-}
-
-function createJSList(input) {
-    // Split the input into an array
-    const items = input.split('/\*&').map(item => item.trim()).filter(item => item !== '');
-
-    // Create the js list string with quotes around each item
-    const jsList = '[' + items.map(item => `"${item}"`).join(', ') + ']';
-    output = jsList;
-    return output;
-} 
-
-function createHTMLList(input) {
-    // Split the input into an array
-    const items = input.split('/\*&').map(item => item.trim()).filter(item => item !== '');
-
-    // Create the HTML list
-    const htmlList = items.map(item => `  <li>${item}</li>`).join('\n');
-    const fullHtmlList = `<ul>\n${htmlList}\n</ul>`;
-
-    output = fullHtmlList;
-    return output;
-}
-
-function createJavaList(input) {
-    // Split the input into an array
-    const items = input.split('/\*&').map(item => item.trim()).filter(item => item !== '');
-
-    // Create the Java list string
-    const javaList = '(' + items.map(item => `"${item}"`).join(', ') + ');';
-
-    console.log('Java list:', javaList);
-    return javaList;
-}

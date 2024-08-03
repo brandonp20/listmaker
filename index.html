@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <title>Array Maker</title>
+    <title>List Maker</title>
 </head>
 <body>
-    <div class="header">Create an Array in any Programming Language</div> 
+    <div class="header">Create a List in any Programming Language</div> 
     
     <br>
     
@@ -18,10 +18,14 @@
             <option value="python">Python</option>
             <option value="html">HTML</option>
             <option value="java">Java</option>
+            <option value="rust">Rust</option>
+            <option value="c">C/C#/C++</option>
+            <option value="ruby">Ruby</option>
+            <option value="kotlin">Kotlin</option>
         </select>
 
         <select class="choose-delimiter">
-            <option value="auto-detect">Auto-Detect</option>
+            <option value="auto-detect" disabled>Auto-Detect</option>
             <option value="line-break">Line Break</option>
             <option value="comma">Comma (,)</option>
             <option value="comma-space">Comma and Space (, )</option>
@@ -30,6 +34,7 @@
             <option value="space">Space ( )</option>
             <option value="custom">Custom</option>
         </select>
+
     </div>
 
     <br>
@@ -41,21 +46,19 @@
     </div>
 
     <br>
+    <div class="input-output">
+        <div class="input-container">
+            <div>Input</div>
+            <textarea maxlength="1000" class="list-input" placeholder="Type or paste your list here."></textarea>
+            <button id="convert-button">Convert to List</button>
+        </div>
 
-    <div>Input</div>
-    <textarea maxlength="1000" class="list-input" placeholder="Type or paste your list here."></textarea>
-    
-    <br>
-    
-    <button id="convert-button">Convert to List</button>
-    
-    <br>
-    <br>
-
-    <div class="output-container">
-        <div>Output</div>
-        <textarea class="list-output"></textarea>
+        <div class="output-container">
+            <div>Output</div>
+            <textarea class="list-output" placeholder="Your list will output here."></textarea>
+            <button class="copy-button">Copy to Clipboard</button>
+        </div>
     </div>
-    <script src="script.js"></script>
+    <script src="main.js" type="module"></script>
 </body>
 </html>
