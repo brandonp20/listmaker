@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Array Maker</title>
+</head>
+<body>
+    <div class="header">Create an Array in any Programming Language</div> 
+    
+    <br>
+    
+    <div class="select-options">
+        <select class="choose-language">
+            <option value="" disabled selected>Choose a Language</option>
+            <option value="javascript">JavaScript</option>
+            <option value="python">Python</option>
+            <option value="html">HTML</option>
+            <option value="java">Java</option>
+        </select>
+
+        <select class="choose-delimiter">
+            <option value="auto-detect">Auto-Detect</option>
+            <option value="line-break">Line Break</option>
+            <option value="comma">Comma (,)</option>
+            <option value="comma-space">Comma and Space (, )</option>
+            <option value="period">Period (.)</option>
+            <option value="back-slash">Backslash (/)</option>
+            <option value="space">Space ( )</option>
+            <option value="custom">Custom</option>
+        </select>
+    </div>
+
+    <br>
+    
+    <div>Enter Custom Delimiter:</div>
+    <div class="custom-delimiter-div">
+        <input class="custom-delimiter-textbox" maxlength="4" disabled>
+        <button class="custom-delimiter-button" disabled>Save</button>
+    </div>
+
+    <br>
+
+    <div>Input</div>
+    <textarea maxlength="1000" class="list-input" placeholder="Type or paste your list here."></textarea>
+    
+    <br>
+    
+    <button id="convert-button">Convert to List</button>
+    
+    <br>
+    <br>
+
+    <div class="output-container">
+        <div>Output</div>
+        <textarea class="list-output"></textarea>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
