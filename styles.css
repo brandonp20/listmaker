@@ -3,43 +3,51 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color:antiquewhite;
+    background-color: antiquewhite;
+    padding: 1rem;
+    box-sizing: border-box;
 }
 
 .header {
-    font-size: 28px;
-    margin-top: 15px;
+    font-size: 1.75rem;
+    margin-top: 1rem;
+    text-align: center;
 }
 
 .select-options {
     display: flex;
-    gap: 25px;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 1rem;
 }
 
 .custom-delimiter-textbox {
-    width: 50px;
+    width: 3rem;
+    margin: 0px;
 }
 
 .list-input, .list-output {
-    width: 675px;
-    height: 400px;
+    width: 100%;
+    height: 20rem;
     max-width: 100%;
     box-sizing: border-box;
 }
 
 .input-output {
     display: flex;
-    gap: 25px;
+    gap: 1.5rem;
     flex-wrap: wrap;
     justify-content: center;
+    width: 100%;
 }
 
 .output-container, .input-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 675px;
-    max-width: 100%;
+    width: 100%;
+    max-width: 42rem;
 }
 
 .textarea-button-wrapper {
@@ -48,16 +56,49 @@ body {
     width: 100%;
 }
 
-.error-message {
+.language-error-message {
     display: none;
 }
 
 button {
-    width: 125px;
-    margin-top: 10px;
+    width: 8rem;
+    margin-top: 0.625rem;
     align-self: center;
 }
 
 .output-button-container {
     text-align: center;
+}
+
+@media (max-width: 768px) {
+    .header {
+        font-size: 1.5rem;
+    }
+
+    .select-options {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .list-input, .list-output {
+        height: 15rem;
+    }
+
+    button {
+        width: 100%;
+        max-width: 12rem;
+    }
+}
+
+.language-container, .delimiter-container {
+    text-align: center;
+}
+
+.custom-delimiter-div {
+    text-align: center;
+}
+
+.custom-delimiter-button {
+    width: 50px;
+    margin: 3px;
 }

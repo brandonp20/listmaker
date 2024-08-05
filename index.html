@@ -12,48 +12,55 @@
     <br>
     
     <div class="select-options">
-        <select class="choose-language">
-            <option value="default" disabled selected>Choose a Language</option>
-            <option value="javascript">JavaScript</option>
-            <option value="python">Python</option>
-            <option value="html">HTML</option>
-            <option value="java">Java</option>
-            <option value="rust">Rust</option>
-            <option value="c">C/C#/C++</option>
-            <option value="ruby">Ruby</option>
-            <option value="kotlin">Kotlin</option>
-        </select>
+        <div class="language-container">
+            <div class="language-header">Language:</div>
+            <select class="choose-language">
+                <option value="default" disabled selected>Choose a Language</option>
+                <option value="javascript">JavaScript</option>
+                <option value="python">Python</option>
+                <option value="html">HTML</option>
+                <option value="java">Java</option>
+                <option value="rust">Rust</option>
+                <option value="c">C/C#/C++</option>
+                <option value="ruby">Ruby</option>
+                <option value="kotlin">Kotlin</option>
+            </select>
+        </div>
 
-        <select class="choose-delimiter">
-            <option value="auto-detect" disabled>Auto-Detect</option>
-            <option value="line-break">Line Break</option>
-            <option value="comma">Comma (,)</option>
-            <option value="comma-space">Comma and Space (, )</option>
-            <option value="period">Period (.)</option>
-            <option value="back-slash">Backslash (/)</option>
-            <option value="space">Space ( )</option>
-            <option value="custom">Custom</option>
-        </select>
+        <div class="delimiter-container">
+            <div class="delimiter-header">Delimiter:</div>
+            <select class="choose-delimiter" label="Choose Delimiter">
+                <!--<option value="auto-detect" disabled>Auto-Detect</option>-->
+                <option value="line-break">Line Break</option>
+                <option value="comma">Comma (,)</option>
+                <option value="comma-space">Comma and Space (, )</option>
+                <option value="period">Period (.)</option>
+                <option value="space">Space ( )</option>
+                <option value="custom">Custom</option>
+            </select>
+        </div>
 
     </div>
 
     <br>
     
-    <div>Enter Custom Delimiter:</div>
+    
     <div class="custom-delimiter-div">
-        <input class="custom-delimiter-textbox" maxlength="4" disabled>
+        <div>Enter Custom Delimiter:</div>
+        <input class="custom-delimiter-textbox" maxlength="5" disabled>
         <button class="custom-delimiter-button" disabled>Save</button>
     </div>
 
     <br>
+    <br>
     <div class="input-output">
         <div class="input-container">
-            <div>Input</div>
+            <div>Input (10K char limit)</div>
             <div class="textarea-button-wrapper">
-                <textarea maxlength="1000" class="list-input" placeholder="Type or paste your list here."></textarea>
+                <textarea maxlength="10000" class="list-input" placeholder="Type or paste your list here."></textarea>
                 <button id="convert-button">Convert to List</button>
             </div>
-            <div class="error-message">Please select a programming language.</div>
+            <div class="language-error-message">Please select a programming language.</div>
         </div>
         
         <div class="output-container">

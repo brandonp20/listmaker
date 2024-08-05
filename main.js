@@ -5,7 +5,9 @@ let languageSelector = document.querySelector(".choose-language");
 let delimiterSelector = document.querySelector(".choose-delimiter");
 let customDelimiterButton = document.querySelector(".custom-delimiter-button");
 let copyButton = document.querySelector(".copy-button");
-const errorMessage = document.querySelector(".error-message");
+const languageErrorMessage = document.querySelector(".language-error-message");
+const customDelimiterInput = document.querySelector('.custom-delimiter-textbox');
+let customDelimiter = "";
 
 let input = "";
 let output = "";
@@ -15,7 +17,7 @@ let language = "";
 languageSelector.addEventListener('change', function(e) {
     language = e.target.value;
     console.log('Language: ', language);
-    errorMessage.style.display='none';
+    languageErrorMessage.style.display='none';
 });
 
 let delimiter = "auto-detect";
@@ -35,9 +37,6 @@ if (input !== "") {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-    const delimiterSelector = document.querySelector(".choose-delimiter");
-    const customDelimiterInput = document.querySelector('.custom-delimiter-textbox');
-
     function toggleCustomDelimiterInput() {
         if (delimiterSelector.value === 'custom') {
             customDelimiterInput.disabled = false;
@@ -59,7 +58,6 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 customDelimiterButton.addEventListener('click', () => {
-    const customDelimiterInput = document.querySelector(".custom-delimiter-textbox");
     customDelimiter = customDelimiterInput.value;
     console.log('Custom delimiter set to:', customDelimiter);
 });
@@ -92,7 +90,7 @@ convertButton.addEventListener('click', function() {
     const normalizedInput = normalizeDelimiter(delimiter, input);
 
     if (language === 'default') {
-        errorMessage.style.display = "flex";
+        languageErrorMessage.style.display = "flex";
     } else {
         if (language === 'python') {
             output = createPythonList(normalizedInput);
