@@ -8,10 +8,37 @@ body {
     box-sizing: border-box;
 }
 
+.header-div {
+    position: relative;
+    padding: 1rem;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: space-between;
+}
 .header {
     font-size: 1.75rem;
-    margin-top: 1rem;
     text-align: center;
+    margin: 0;
+}
+.dark-mode-button {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.dark-mode-button input {
+    margin-right: 0.5rem;
+}
+@media (max-width: 768px) {
+    .header {
+        font-size: 1.25rem;
+    }
+    .dark-mode-button {
+        top: 0.5rem;
+        right: 0.5rem;
+    }
 }
 
 .select-options {

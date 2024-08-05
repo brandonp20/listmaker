@@ -7,6 +7,31 @@ let customDelimiterButton = document.querySelector(".custom-delimiter-button");
 let copyButton = document.querySelector(".copy-button");
 const languageErrorMessage = document.querySelector(".language-error-message");
 const customDelimiterInput = document.querySelector('.custom-delimiter-textbox');
+const darkModeButton = document.querySelector(".dark-mode-button");
+const bodyStyling = document.querySelector('body');
+const inputTextbox = document.querySelector('.list-input');
+const outputTextbox = document.querySelector('.list-output');
+
+let darkMode = false;
+
+darkModeButton.addEventListener('click', () => {
+    if (darkMode === false) {
+        console.log("Dark mode enabled");
+        bodyStyling.style.color = 'antiquewhite';
+        bodyStyling.style.backgroundColor = 'black';
+        inputTextbox.style.backgroundColor = '#c8bcac';
+        outputTextbox.style.backgroundColor = '#c8bcac';
+        darkMode = true;
+    } else {
+        console.log("Dark mode disabled");
+        bodyStyling.style.color = 'black';
+        bodyStyling.style.backgroundColor = 'antiquewhite';
+        inputTextbox.style.backgroundColor = '';
+        outputTextbox.style.backgroundColor = '';
+        darkMode = false;
+    }
+});
+
 let customDelimiter = "";
 
 let input = "";
