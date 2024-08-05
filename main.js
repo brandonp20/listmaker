@@ -5,13 +5,17 @@ let languageSelector = document.querySelector(".choose-language");
 let delimiterSelector = document.querySelector(".choose-delimiter");
 let customDelimiterButton = document.querySelector(".custom-delimiter-button");
 let copyButton = document.querySelector(".copy-button");
+const errorMessage = document.querySelector(".error-message");
 
 let input = "";
+let output = "";
+const outputElement = document.querySelector('.list-output');
 
 let language = "";
 languageSelector.addEventListener('change', function(e) {
     language = e.target.value;
     console.log('Language: ', language);
+    errorMessage.style.display='none';
 });
 
 let delimiter = "auto-detect";
@@ -87,34 +91,35 @@ convertButton.addEventListener('click', function() {
     console.log(language, delimiter, input);
     const normalizedInput = normalizeDelimiter(delimiter, input);
 
-    let output;
-    if (language === 'python') {
-        output = createPythonList(normalizedInput);
-    } else if (language === 'javascript') {
-        output = createJSList(normalizedInput);
-    } else if (language === 'html') {
-        output = createHTMLList(normalizedInput);
-    } else if (language === 'java') {
-        output = createJavaList(normalizedInput);
-    } else if (language === 'rust') {
-        output = createRustList(normalizedInput);
-    } else if (language === 'c') {
-        output = createCList(normalizedInput);
-    } else if (language === 'ruby') {
-        output = createRubyList(normalizedInput);
-    } else if (language === 'kotlin') {
-        output = createKotlinList(normalizedInput);
+    if (language === 'default') {
+        errorMessage.style.display = "flex";
     } else {
-        output = normalizedInput;
-    }
+        if (language === 'python') {
+            output = createPythonList(normalizedInput);
+        } else if (language === 'javascript') {
+            output = createJSList(normalizedInput);
+        } else if (language === 'html') {
+            output = createHTMLList(normalizedInput);
+        } else if (language === 'java') {
+            output = createJavaList(normalizedInput);
+        } else if (language === 'rust') {
+            output = createRustList(normalizedInput);
+        } else if (language === 'c') {
+            output = createCList(normalizedInput);
+        } else if (language === 'ruby') {
+            output = createRubyList(normalizedInput);
+        } else if (language === 'kotlin') {
+            output = createKotlinList(normalizedInput);
+        } else {
+            output = normalizedInput;
+        }
 
-    const outputContainer = document.querySelector('.output-container');
-    const outputElement = document.querySelector('.list-output');
-    outputElement.value = output;
-    outputContainer.style.display = "inline";
+        const outputContainer = document.querySelector('.output-container');
+        outputElement.value = output;
+        outputContainer.style.display = "inline";
+    }
 });
 
 copyButton.addEventListener("click", () => {
-    navigator.clipboard.writeText(output);
+    navigator.clipboard.writeText(outputElement.value);
 });
-

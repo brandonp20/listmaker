@@ -13,7 +13,7 @@
     
     <div class="select-options">
         <select class="choose-language">
-            <option value="" disabled selected>Choose a Language</option>
+            <option value="default" disabled selected>Choose a Language</option>
             <option value="javascript">JavaScript</option>
             <option value="python">Python</option>
             <option value="html">HTML</option>
@@ -49,14 +49,21 @@
     <div class="input-output">
         <div class="input-container">
             <div>Input</div>
-            <textarea maxlength="1000" class="list-input" placeholder="Type or paste your list here."></textarea>
-            <button id="convert-button">Convert to List</button>
+            <div class="textarea-button-wrapper">
+                <textarea maxlength="1000" class="list-input" placeholder="Type or paste your list here."></textarea>
+                <button id="convert-button">Convert to List</button>
+            </div>
+            <div class="error-message">Please select a programming language.</div>
         </div>
-
+        
         <div class="output-container">
             <div>Output</div>
-            <textarea class="list-output" placeholder="Your list will output here."></textarea>
-            <button class="copy-button">Copy to Clipboard</button>
+            <div class="textarea-button-wrapper">
+                <textarea class="list-output" placeholder="Your list will output here."></textarea>
+                <div class="output-button-container">
+                    <button class="copy-button">Copy to Clipboard</button>
+                </div>
+            </div>
         </div>
     </div>
     <script src="main.js" type="module"></script>

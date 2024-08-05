@@ -20,15 +20,44 @@ body {
     width: 50px;
 }
 
-.list-input, .list-output{
-    width: 650px;
+.list-input, .list-output {
+    width: 675px;
     height: 400px;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 .input-output {
     display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .output-container, .input-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 675px;
+    max-width: 100%;
+}
+
+.textarea-button-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.error-message {
+    display: none;
+}
+
+button {
+    width: 125px;
+    margin-top: 10px;
+    align-self: center;
+}
+
+.output-button-container {
     text-align: center;
 }
