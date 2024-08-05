@@ -15,6 +15,7 @@
         </label>
     </div>
     <br>
+    <br>
     
     <div class="select-options">
         <div class="language-container">
@@ -51,7 +52,7 @@
     
     
     <div class="custom-delimiter-div">
-        <div>Enter Custom Delimiter:</div>
+        <div class="custom-delimiter-label">Enter Custom Delimiter:</div>
         <input class="custom-delimiter-textbox" maxlength="5" disabled>
         <button class="custom-delimiter-button" disabled>Save</button>
     </div>
@@ -60,7 +61,11 @@
     <br>
     <div class="input-output">
         <div class="input-container">
-            <div>Input (10K char limit)</div>
+            <div class="input-textbox-label-container">
+                <div class="input-textbox-label">Input</div>
+                <div class="char-limit-label">(10K char limit)</div>
+            </div>
+            
             <div class="textarea-button-wrapper">
                 <textarea maxlength="10000" class="list-input" placeholder="Type or paste your list here."></textarea>
                 <button id="convert-button">Convert to List</button>
@@ -69,7 +74,7 @@
         </div>
         
         <div class="output-container">
-            <div>Output</div>
+            <div class="output-textbox-label">Output</div>
             <div class="textarea-button-wrapper">
                 <textarea class="list-output" placeholder="Your list will output here."></textarea>
                 <div class="output-button-container">
