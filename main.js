@@ -75,10 +75,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Initial state
     toggleCustomDelimiterInput();
 
-    // Add event listener for changes
     delimiterSelector.addEventListener('change', toggleCustomDelimiterInput);
 });
 
